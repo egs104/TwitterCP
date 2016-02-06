@@ -19,6 +19,10 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
+        
+        self.automaticallyAdjustsScrollViewInsets = false
         
         TwitterClient.sharedInstance.homeTimeLineWithParams(nil, completion: { (tweets: [Tweet]?, error: NSError?) -> Void in
             self.tweets = tweets
@@ -26,7 +30,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.tableView.reloadData()
         })
         
-//        self.tableView.reloadData()
+        navigationController?.navigationBar.barTintColor = UIColor.blueColor()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +42,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func onLogout(sender: AnyObject) {
         User.currentUser?.logout()
     }
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tweets != nil {

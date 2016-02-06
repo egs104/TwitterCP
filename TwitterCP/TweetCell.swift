@@ -31,7 +31,17 @@ class TweetCell: UITableViewCell {
         
         userProfilePic.layer.cornerRadius = 3
         userProfilePic.clipsToBounds = true
+        
+        tweetTextLabel.preferredMaxLayoutWidth = tweetTextLabel.frame.size.width
+
     }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    
+        tweetTextLabel.preferredMaxLayoutWidth = tweetTextLabel.frame.size.width
+    }
+
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
