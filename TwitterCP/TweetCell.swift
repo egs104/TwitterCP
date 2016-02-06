@@ -15,6 +15,10 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var tweetTextLabel: UILabel!
     @IBOutlet weak var timestampLabel: UILabel!
+    @IBOutlet weak var retweetCountLabel: UILabel!
+    @IBOutlet weak var favoriteCountLabel: UILabel!
+    @IBOutlet weak var retweetButton: UIButton!
+    @IBOutlet weak var favoriteButton: UIButton!
     
     var tweet: Tweet! {
         didSet {
@@ -22,6 +26,8 @@ class TweetCell: UITableViewCell {
             tweetTextLabel.text = tweet.text
             userProfilePic.setImageWithURL(NSURL(string: tweet.profilePicUrl!)!)
             timestampLabel.text = tweet.createdAtString
+            retweetCountLabel.text = "\(tweet.retweetCount!)"
+            favoriteCountLabel.text = "\(tweet.favoriteCount!)"
         }
     }
 
@@ -48,5 +54,22 @@ class TweetCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    @IBAction func retweetPressed(sender: AnyObject) {
+        
+//        if tweet.didRetweet == 0 {
+//            retweetButton.setImage(UIImage(named: "retweet-action-on-pressed"), forState: .Normal)
+//            tweet.retweetCount? += 1
+//            tweet.didRetweet = 1
+//        }
+//        
+//        if tweet.didRetweet == 1 {
+//            retweetButton.setImage(UIImage(named: "retweet-action"), forState: .Normal)
+//            tweet.retweetCount? -= 1
+//            tweet.didRetweet = 0
+//        }
+        
+    }
+    
 
 }
