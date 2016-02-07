@@ -46,7 +46,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tweets != nil {
-            return 20
+            return tweets!.count
         } else {
             return 0
         }
@@ -56,6 +56,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
         
         cell.tweet = tweets![indexPath.row]
+//        cell.retweetButton.tag = indexPath.row
+//        cell.retweetButton.addTarget
         
         return cell
 

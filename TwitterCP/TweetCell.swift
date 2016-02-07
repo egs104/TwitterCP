@@ -57,19 +57,44 @@ class TweetCell: UITableViewCell {
     
     @IBAction func retweetPressed(sender: AnyObject) {
         
-//        if tweet.didRetweet == 0 {
-//            retweetButton.setImage(UIImage(named: "retweet-action-on-pressed"), forState: .Normal)
-//            tweet.retweetCount? += 1
-//            tweet.didRetweet = 1
-//        }
-//        
-//        if tweet.didRetweet == 1 {
-//            retweetButton.setImage(UIImage(named: "retweet-action"), forState: .Normal)
-//            tweet.retweetCount? -= 1
-//            tweet.didRetweet = 0
-//        }
+        if tweet.didRetweet == 0 {
+            retweetButton.setImage(UIImage(named: "retweet-action-on-pressed"), forState: .Normal)
+            tweet.retweetCount? += 1
+            tweet.didRetweet = 1
+            retweetCountLabel.text = "\(tweet.retweetCount!)"
+            return
+        }
+        
+        if tweet.didRetweet == 1 {
+            retweetButton.setImage(UIImage(named: "retweet-action"), forState: .Normal)
+            tweet.retweetCount? -= 1
+            tweet.didRetweet = 0
+            retweetCountLabel.text = "\(tweet.retweetCount!)"
+            return
+        }
         
     }
+    
+    @IBAction func favoritePressed(sender: AnyObject) {
+        
+        if tweet.didFavorite == 0 {
+            favoriteButton.setImage(UIImage(named: "like-action-on-pressed"), forState: .Normal)
+            tweet.favoriteCount? += 1
+            tweet.didFavorite = 1
+            favoriteCountLabel.text = "\(tweet.favoriteCount!)"
+            return
+        }
+        
+        if tweet.didFavorite == 1 {
+            favoriteButton.setImage(UIImage(named: "like-action"), forState: .Normal)
+            tweet.favoriteCount? -= 1
+            tweet.didFavorite = 0
+            favoriteCountLabel.text = "\(tweet.favoriteCount!)"
+            return
+        }
+        
+    }
+    
     
 
 }

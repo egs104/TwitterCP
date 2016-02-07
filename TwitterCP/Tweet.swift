@@ -18,8 +18,8 @@ class Tweet: NSObject {
     var createdAt: NSDate?
     var favoriteCount: Int?
     var retweetCount: Int?
-    //var didRetweet: Int?
-    //var didFavorite: Int?
+    var didRetweet: Int?
+    var didFavorite: Int?
     
     init(dictionary: NSDictionary) {
         user = User(dictionary: dictionary["user"] as! NSDictionary)
@@ -33,8 +33,8 @@ class Tweet: NSObject {
         createdAt = formatter.dateFromString(createdAtString!)
         favoriteCount = dictionary["favorite_count"] as? Int
         retweetCount = dictionary["retweet_count"] as? Int
-        //didRetweet = dictionary["favorited"] as? Int
-        //didFavorite = dictionary["retweeted"] as? Int
+        didRetweet = dictionary["favorited"] as? Int
+        didFavorite = dictionary["retweeted"] as? Int
     }
     
     class func tweetsWithArray(array: [NSDictionary]) -> [Tweet] {
