@@ -39,7 +39,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I had a challenge with the text label truncating, but I was able to look back and use the skills I learned with auto layout last week to help me fix this issue.
 
 ## License
 
