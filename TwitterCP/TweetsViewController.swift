@@ -30,8 +30,6 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.tableView.reloadData()
         })
         
-        navigationController?.navigationBar.barTintColor = UIColor.blueColor()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +40,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func onLogout(sender: AnyObject) {
         User.currentUser?.logout()
     }
+    
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
