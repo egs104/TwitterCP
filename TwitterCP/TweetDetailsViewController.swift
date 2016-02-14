@@ -31,6 +31,7 @@ class TweetDetailsViewController: UIViewController {
         tweetContentLabel.text = selectedTweet?.text
         retweetsLabel.text = "\(selectedTweet!.retweetCount!)"
         favoritesLabel.text = "\(selectedTweet!.favoriteCount!)"
+        
     }
 
     override func didReceiveMemoryWarning() {

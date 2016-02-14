@@ -19,6 +19,7 @@
 		A1C6E2581C65BE8700D5EF21 /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C6E2571C65BE8700D5EF21 /* TweetsViewController.swift */; };
 		A1C6E25C1C6642E700D5EF21 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C6E25B1C6642E700D5EF21 /* TweetCell.swift */; };
 		A1C6E25E1C6ABA5800D5EF21 /* TweetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C6E25D1C6ABA5800D5EF21 /* TweetDetailsViewController.swift */; };
+		A1EFC66A1C6D6064000C8180 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EFC6691C6D6064000C8180 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		A1C6E2571C65BE8700D5EF21 /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
 		A1C6E25B1C6642E700D5EF21 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		A1C6E25D1C6ABA5800D5EF21 /* TweetDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailsViewController.swift; sourceTree = "<group>"; };
+		A1EFC6691C6D6064000C8180 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F5CFD8E9216490E0D6FFC5A0 /* Pods_TwitterCP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterCP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 				A1C6E2571C65BE8700D5EF21 /* TweetsViewController.swift */,
 				A18C07881C61755B006ACEE2 /* ViewController.swift */,
 				A1C6E25D1C6ABA5800D5EF21 /* TweetDetailsViewController.swift */,
+				A1EFC6691C6D6064000C8180 /* ProfileViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				A18C079F1C63FAAD006ACEE2 /* Tweet.swift in Sources */,
 				A1C6E2581C65BE8700D5EF21 /* TweetsViewController.swift in Sources */,
 				A18C07891C61755B006ACEE2 /* ViewController.swift in Sources */,
+				A1EFC66A1C6D6064000C8180 /* ProfileViewController.swift in Sources */,
 				A18C07991C6179A2006ACEE2 /* TwitterClient.swift in Sources */,
 				A18C07871C61755B006ACEE2 /* AppDelegate.swift in Sources */,
 			);
