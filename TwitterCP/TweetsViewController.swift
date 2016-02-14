@@ -87,6 +87,11 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             }
         }
+        
+        if let composeButton = sender as? UIBarButtonItem {
+            let composeViewController = segue.destinationViewController as! ComposeViewController
+            composeViewController.loggedInUser = User.currentUser
+        }
 
     }
 

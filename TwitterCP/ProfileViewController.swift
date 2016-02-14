@@ -31,13 +31,11 @@ class ProfileViewController: UIViewController {
         followersCountLabel.text = "\(owningUser!.followersCount!)"
         followingCountLabel.text = "\(owningUser!.followingCount!)"
         nameLabel.text = owningUser?.name!
-        handleLabel.text = "@\(owningUser?.screenname!)"
+        handleLabel.text = "@\(owningUser!.screenname!)"
         
         profilePicImageView.layer.cornerRadius = 3
         profilePicImageView.clipsToBounds = true
         
-        print(owningUser?.followingCount)
-        print(owningUser?.coverPhotoUrl)
     }
 
     override func didReceiveMemoryWarning() {
