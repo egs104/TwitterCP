@@ -36,6 +36,16 @@ class ComposeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func sendTweet(sender: AnyObject) {
+        if tweetTextArea.text != nil {
+            var formattedTweet = tweetTextArea.text.stringByReplacingOccurrencesOfString(" ", withString: "%20")
+            
+            TwitterClient.sharedInstance.postTweet(formattedTweet)
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
 
     /*
     // MARK: - Navigation

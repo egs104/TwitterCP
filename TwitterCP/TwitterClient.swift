@@ -39,6 +39,15 @@ class TwitterClient: BDBOAuth1SessionManager {
 
     }
     
+    func postTweet(tweetContent: String) {
+        POST("https://api.twitter.com/1.1/statuses/update.json?status=\(tweetContent)", parameters: nil, progress: nil, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            print("Tweet posted")
+        }) { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                print(error)
+                print("error posting tweet")
+        }
+    }
+    
     func loginWithCompletion(completion: (user: User?, error: NSError?) -> ()) {
         loginCompletion = completion
         

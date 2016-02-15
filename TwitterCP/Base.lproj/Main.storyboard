@@ -89,7 +89,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="z5f-8z-naI">
-                        <barButtonItem key="rightBarButtonItem" title="Tweet" id="Qug-eK-i6G"/>
+                        <barButtonItem key="rightBarButtonItem" title="Tweet" id="Qug-eK-i6G">
+                            <connections>
+                                <action selector="sendTweet:" destination="CCC-x4-fjU" id="hhz-uW-Nnn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="currentUserHandle" destination="OtA-A5-0Xn" id="laE-zb-cXJ"/>
@@ -374,17 +378,28 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ado-G1-1LE">
+                                <rect key="frame" x="0.0" y="292" width="320" height="1"/>
+                                <color key="backgroundColor" red="0.86860075950000004" green="0.86860075950000004" blue="0.86860075950000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="dDE-mx-6c4"/>
+                                    <constraint firstAttribute="height" constant="1" id="vg3-zv-ie3"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EFV-pQ-aGf" firstAttribute="centerX" secondItem="5EW-D2-wj0" secondAttribute="centerX" id="23d-or-oPB"/>
                             <constraint firstItem="bdP-Ni-uIj" firstAttribute="centerX" secondItem="5EW-D2-wj0" secondAttribute="centerX" id="2hp-us-Qft"/>
                             <constraint firstItem="bdP-Ni-uIj" firstAttribute="top" secondItem="Wa1-aa-2N5" secondAttribute="bottom" constant="8" id="7Hz-OO-h0Y"/>
+                            <constraint firstItem="ado-G1-1LE" firstAttribute="top" secondItem="dL2-Wb-GRB" secondAttribute="bottom" constant="57" id="Cah-es-TTp"/>
                             <constraint firstItem="m3p-9L-bd7" firstAttribute="top" secondItem="dL2-Wb-GRB" secondAttribute="bottom" constant="1" id="EDK-jC-PUc"/>
                             <constraint firstItem="Wa1-aa-2N5" firstAttribute="centerX" secondItem="5EW-D2-wj0" secondAttribute="centerX" id="GFY-9Y-aJt"/>
                             <constraint firstItem="m3p-9L-bd7" firstAttribute="leading" secondItem="5EW-D2-wj0" secondAttribute="leading" id="Gxt-5U-EWd"/>
                             <constraint firstAttribute="trailing" secondItem="m3p-9L-bd7" secondAttribute="trailing" id="HzZ-3c-FWy"/>
                             <constraint firstItem="Wa1-aa-2N5" firstAttribute="top" secondItem="RKV-Ry-W6J" secondAttribute="bottom" constant="17" id="I5q-IJ-0mq"/>
+                            <constraint firstAttribute="trailing" secondItem="ado-G1-1LE" secondAttribute="trailing" id="QF1-8F-H96"/>
+                            <constraint firstItem="ado-G1-1LE" firstAttribute="leading" secondItem="5EW-D2-wj0" secondAttribute="leading" id="Rxl-Oo-PBS"/>
                             <constraint firstItem="dL2-Wb-GRB" firstAttribute="leading" secondItem="5EW-D2-wj0" secondAttribute="leading" id="h4m-HJ-Aeu"/>
                             <constraint firstItem="dL2-Wb-GRB" firstAttribute="top" secondItem="RKV-Ry-W6J" secondAttribute="bottom" id="huh-df-d4S"/>
                             <constraint firstItem="EFV-pQ-aGf" firstAttribute="top" secondItem="bdP-Ni-uIj" secondAttribute="bottom" constant="2" id="ph2-cu-u9v"/>
@@ -599,7 +614,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tweet" id="dbM-Dd-Wa2">
-                        <barButtonItem key="rightBarButtonItem" title="Reply" id="Q6t-U9-Ux9"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reply" id="Q6t-U9-Ux9">
+                            <connections>
+                                <segue destination="CCC-x4-fjU" kind="push" id="DZm-gM-nWN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="C2Y-a5-lLW" id="dy0-QX-TO2"/>
@@ -640,4 +659,7 @@
         <image name="reply-action" width="65" height="72"/>
         <image name="retweet-action" width="75" height="72"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="DZm-gM-nWN"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -11,6 +11,7 @@ import UIKit
 class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var tweets: [Tweet]?
+    var refreshControl: UIRefreshControl!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,15 +21,15 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 120
+        tableView.estimatedRowHeight = 80
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(refreshControl, atIndex: 0)
         
         self.automaticallyAdjustsScrollViewInsets = false
         
-        TwitterClient.sharedInstance.homeTimeLineWithParams(nil, completion: { (tweets: [Tweet]?, error: NSError?) -> Void in
-            self.tweets = tweets
-            //print(tweets)
-            self.tableView.reloadData()
-        })
+        fetchTweets()
         
     }
 
@@ -41,7 +42,13 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         User.currentUser?.logout()
     }
     
-    
+    func fetchTweets() {
+        TwitterClient.sharedInstance.homeTimeLineWithParams(nil, completion: { (tweets: [Tweet]?, error: NSError?) -> Void in
+            self.tweets = tweets
+            //print(tweets)
+            self.tableView.reloadData()
+        })
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tweets != nil {
@@ -55,11 +62,27 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
         
         cell.tweet = tweets![indexPath.row]
-//        cell.retweetButton.tag = indexPath.row
-//        cell.retweetButton.addTarget
         
         return cell
 
+    }
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
+    func onRefresh() {
+        delay(2, closure: {
+            self.refreshControl.endRefreshing()
+        })
+        
+        fetchTweets()
+        
+        self.refreshControl?.endRefreshing()
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
