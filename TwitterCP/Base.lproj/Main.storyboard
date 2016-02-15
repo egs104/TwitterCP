@@ -640,6 +640,7 @@
             <objects>
                 <navigationController storyboardIdentifier="TweetsNavController" automaticallyAdjustsScrollViewInsets="NO" id="TVn-if-59f" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="VQu-G8-l2m"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dhv-2i-yrY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -653,6 +654,43 @@
             </objects>
             <point key="canvasLocation" x="839" y="395"/>
         </scene>
+        <!--Item 2-->
+        <scene sceneID="Cls-dN-g8J">
+            <objects>
+                <viewController id="J5I-HG-GiV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F87-L6-oiW"/>
+                        <viewControllerLayoutGuide type="bottom" id="vzd-zt-TsX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T4i-2i-7y3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="9u1-B6-Afy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="olo-Fx-oAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="859" y="1535"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Mex-wU-wEf">
+            <objects>
+                <tabBarController id="kEo-W1-6Y5" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="uiR-r1-Jng">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="J5I-HG-GiV" kind="relationship" relationship="viewControllers" id="bXq-xX-VwA"/>
+                        <segue destination="TVn-if-59f" kind="push" id="nbp-fz-JGZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C4r-Rb-nEu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="406" y="1058"/>
+        </scene>
     </scenes>
     <resources>
         <image name="like-action" width="54" height="72"/>
@@ -660,6 +698,7 @@
         <image name="retweet-action" width="75" height="72"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="jLP-zZ-rrt"/>
         <segue reference="DZm-gM-nWN"/>
     </inferredMetricsTieBreakers>
 </document>

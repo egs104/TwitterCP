@@ -43,7 +43,7 @@ class ComposeViewController: UIViewController {
             TwitterClient.sharedInstance.postTweet(formattedTweet)
         }
         
-        dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
         
     }
 
